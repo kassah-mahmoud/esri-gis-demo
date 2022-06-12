@@ -5,6 +5,7 @@ import esriConfig from "@arcgis/core/config";
 import Graphic from "@arcgis/core/Graphic";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer";
 import Polygon from "@arcgis/core/geometry/Polygon";
+// import BasemapGallery from "@arcgis/core/widgets/BasemapGallery";
 
 const karantinaPolygonCoords = [
   [35.52495699311039, 33.8993894469416],
@@ -117,32 +118,39 @@ function EsriMap() {
         rings: karantinaPolygonCoords,
       });
 
-      const karantinaGraphic = new Graphic({
-        geometry: polygon,
-        symbol: {
-          type: "simple-fill", // autocasts as new SimpleFillSymbol()
-          color: [51, 51, 204, 0.4],
-          style: "solid",
-          outline: {
-            color: "white",
-            width: 1,
-          },
-        },
-        visible: true,
-      });
+      // const karantinaGraphic = new Graphic({
+      //   geometry: polygon,
+      //   symbol: {
+      //     type: "simple-fill", // autocasts as new SimpleFillSymbol()
+      //     color: [51, 51, 204, 0.4],
+      //     style: "solid",
+      //     outline: {
+      //       color: "white",
+      //       width: 1,
+      //     },
+      //   },
+      //   visible: true,
+      // });
 
-      graphicsLayer.add(karantinaGraphic);
+      // graphicsLayer.add(karantinaGraphic);
 
-      new MapView({
+      const view = new MapView({
         map: map,
         container: mapDiv.current,
         zoom: 16, // Zoom level
         center: [35.5324457886258, 33.90175539527376], // Longitude, latitude
         constraints: {
-          minZoom: 15,
           geometry: polygon,
         },
       });
+
+      // const basemapGallery = new BasemapGallery({
+      //   view: view,
+      // });
+      // // Add widget to the top right corner of the view
+      // view.ui.add(basemapGallery, {
+      //   position: "top-right",
+      // });
     }
   }, []);
 
