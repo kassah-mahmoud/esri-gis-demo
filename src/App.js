@@ -1,10 +1,10 @@
 import React from "react";
 
 import "./App.css";
-import OLMap from "./OLMap";
+import EsriMap from "./EsriMap";
 
 function App() {
-  return <OLMap />;
+  return <EsriMap />;
 }
 
 export default App;
