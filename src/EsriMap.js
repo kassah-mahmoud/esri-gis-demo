@@ -134,7 +134,7 @@ function EsriMap() {
 
       // graphicsLayer.add(karantinaGraphic);
 
-      const view = new MapView({
+      new MapView({
         map: map,
         container: mapDiv.current,
         zoom: 16, // Zoom level
