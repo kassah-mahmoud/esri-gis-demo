@@ -17,6 +17,7 @@
   bottom: 12px;
   left: -50px;
   min-width: 280px;
+  min-height: 200px;
 }
 .ol-popup:after,
 .ol-popup:before {
@@ -50,4 +51,9 @@
 }
 .ol-popup-closer:after {
   content: "✖";
+}
+
+#chartdiv {
+  min-height: 200px;
+  width: 300px;
 }
